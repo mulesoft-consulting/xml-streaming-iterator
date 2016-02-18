@@ -1,0 +1,6 @@
+<ns1:Item xmlns:ns1="http://www.test.com" id="1" group="ABCDE" xmlns:ns0="http://www.main.com">
+		<Field1 transaction="12345">Filed1</Field1>
+		<Field2 transaction="12345">
+			<ns0:Inner id="12345">Value</ns0:Inner>
+		</Field2>
+	</ns1:Item>

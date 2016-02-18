@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
+    <file:connector name="File" autoDelete="true" streaming="true" validateConnections="true" doc:name="File"/>
+    <flow name="xml-streaming-iteratorFlow">
+        <file:inbound-endpoint path="/Users/simoneavossa/MuleSoft/Testing/Streaming/Input" connector-ref="File" responseTimeout="10000" doc:name="Read"/>
+        <custom-transformer class="streaming.xml.XMLStreamingIteratorTransformer" doc:name="XML Iterator Transformer">
+            <spring:property name="recordTagName" value="item"/>
+        </custom-transformer>
+        <foreach doc:name="For Each">
+            <file:outbound-endpoint path="/Users/simoneavossa/MuleSoft/Testing/Streaming/Output" outputPattern="output_#[counter].xml" connector-ref="File" responseTimeout="10000" doc:name="Write"/>
+        </foreach>
+    </flow>
+</mule>

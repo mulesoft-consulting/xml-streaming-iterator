@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:Root xmlns:ns0="http://www.main.com">
+	<ns1:Item id="1" group="ABCDE" xmlns:ns1="http://www.test.com">
+		<Field1 transaction="12345">Filed1</Field1>
+		<Field2 transaction="12345">
+			<ns0:Inner id="12345">Value</ns0:Inner>
+		</Field2>
+	</ns1:Item>
+	<ns1:Item id="2" group="ABCDE" xmlns:ns1="http://www.test.com">
+		<Field1 transaction="12345">Filed1</Field1>
+		<Field2 transaction="12345">
+			<ns0:Inner id="12345">Value</ns0:Inner>
+		</Field2>
+	</ns1:Item>
+	<ns1:Item id="3" group="ABCDE" xmlns:ns1="http://www.test.com">
+		<Field1 transaction="12345">Filed1</Field1>
+		<Field2 transaction="12345">
+			<ns0:Inner id="12345">Value</ns0:Inner>
+		</Field2>
+	</ns1:Item>
+	<ns1:Discard discardId="1" xmlns:ns1="http://www.test.com">
+		<Discard1 lock="true">12345</Discard1>
+	</ns1:Discard>
+	<ns1:Discard discardId="2" xmlns:ns1="http://www.test.com">
+		<Discard1 lock="true">12345</Discard1>
+	</ns1:Discard>
+</ns0:Root>
