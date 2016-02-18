@@ -133,7 +133,7 @@ public class XMLStreamingIterator implements Iterator<byte[]> {
 				event = eventReader.nextEvent();
 				if (event.isStartElement()) {
 					startElement = event.asStartElement();
-					if (startElement.getName().getLocalPart().equals("Item")) {
+					if (startElement.getName().getLocalPart().equals(recordTagName)) {
 						return true;
 					} else {
 						Iterator<?> it = startElement.getNamespaces();						
