@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
     <file:connector name="File" autoDelete="true" streaming="true" validateConnections="true" doc:name="File"/>
     <flow name="xml-streaming-iteratorFlow">
         <file:inbound-endpoint path="/Users/simoneavossa/MuleSoft/Testing/Streaming/Input" connector-ref="File" responseTimeout="10000" doc:name="Read"/>
-        <custom-transformer class="streaming.xml.XMLStreamingIteratorTransformer" doc:name="XML Iterator Transformer">
+        <custom-transformer class="streaming.xml.XMLStreamingIteratorTransformer" doc:name="XML Streaming Iterator Transformer">
             <spring:property name="recordTagName" value="item"/>
         </custom-transformer>
         <foreach doc:name="For Each">
